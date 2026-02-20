@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, JetBrains_Mono } from "next/font/google";
+import { DM_Sans, JetBrains_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -14,10 +14,16 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500"],
 });
 
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
+
 export const metadata: Metadata = {
-  title: "FitCoach — Your AI Fitness Coach",
+  title: "FitCoach — Your Personal Fitness Coach",
   description:
-    "Get personalized fitness guidance on training, nutrition, recovery, and more. Chat with your AI-powered fitness coach.",
+    "Premium AI-powered fitness coaching. Personalized guidance on training, nutrition, recovery, and performance.",
 };
 
 export default function RootLayout({
@@ -34,7 +40,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${dmSans.variable} ${jetbrainsMono.variable} antialiased`}
+        className={`${dmSans.variable} ${jetbrainsMono.variable} ${playfairDisplay.variable} antialiased`}
       >
         {children}
       </body>

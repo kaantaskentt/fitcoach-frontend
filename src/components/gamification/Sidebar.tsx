@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { XPProgressBar } from "./XPProgressBar";
 import { StreakCounter } from "./StreakCounter";
 import { BadgeGrid } from "./BadgeGrid";
+import { CoachTeaser } from "@/components/teaser/CoachTeaser";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -31,7 +32,8 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           className="text-xs font-semibold uppercase tracking-wider mb-4"
           style={{
             color: "var(--color-text-secondary)",
-            fontFamily: "Satoshi, var(--font-dm-sans), sans-serif",
+            fontFamily: "var(--font-playfair), Georgia, serif",
+            letterSpacing: "0.1em",
           }}
         >
           Your Progress
@@ -47,6 +49,12 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
 
       {/* Section: Badges */}
       <BadgeGrid />
+
+      {/* Divider */}
+      <div className="h-px" style={{ background: "var(--color-border)" }} />
+
+      {/* Teaser: Speak with a Fit Coach */}
+      <CoachTeaser />
     </div>
   );
 
@@ -102,7 +110,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                 className="text-base font-semibold"
                 style={{
                   color: "var(--color-text-primary)",
-                  fontFamily: "Satoshi, var(--font-dm-sans), sans-serif",
+                  fontFamily: "var(--font-playfair), Georgia, serif",
                 }}
               >
                 Progress

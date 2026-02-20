@@ -57,17 +57,17 @@ export function ChatLayout() {
       <div className="h-dvh flex flex-col" style={{ background: "var(--color-bg)" }}>
         {/* Header */}
         <header
-          className="shrink-0 flex items-center justify-between px-4 sm:px-6 h-14 border-b"
+          className="shrink-0 flex items-center justify-between px-5 sm:px-7 h-16 border-b"
           style={{
             borderColor: "var(--color-border)",
             background: "var(--color-surface)",
           }}
         >
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-3">
             {/* Logo mark */}
             <div
-              className="flex items-center justify-center w-7 h-7 rounded-lg"
-              style={{ background: "var(--color-accent)" }}
+              className="flex items-center justify-center w-8 h-8 rounded-lg"
+              style={{ background: "linear-gradient(135deg, #C9A96E, #9F7D55)" }}
             >
               <svg
                 width="14"
@@ -82,10 +82,11 @@ export function ChatLayout() {
               </svg>
             </div>
             <h1
-              className="text-base font-bold tracking-tight"
+              className="text-lg tracking-tight"
               style={{
                 color: "var(--color-text-primary)",
-                fontFamily: "Satoshi, var(--font-dm-sans), sans-serif",
+                fontFamily: "var(--font-playfair), Georgia, serif",
+                fontWeight: 600,
               }}
             >
               FitCoach

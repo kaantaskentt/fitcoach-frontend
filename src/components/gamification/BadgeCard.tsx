@@ -8,12 +8,12 @@ interface BadgeCardProps {
 }
 
 const BADGE_ICONS: Record<BadgeId, { emoji: string; color: string }> = {
-  strength: { emoji: "💪", color: "#7C3AED" },
-  nutrition: { emoji: "🥗", color: "#059669" },
-  cardio: { emoji: "🏃", color: "#DC2626" },
-  flexibility: { emoji: "🧘", color: "#7C3AED" },
-  recovery: { emoji: "😴", color: "#2563EB" },
-  consistency: { emoji: "📋", color: "#D97706" },
+  strength: { emoji: "💪", color: "#8B6E4B" },
+  nutrition: { emoji: "🥗", color: "#5A8A6A" },
+  cardio: { emoji: "🏃", color: "#C17832" },
+  flexibility: { emoji: "🧘", color: "#9F7D55" },
+  recovery: { emoji: "😴", color: "#7A8B96" },
+  consistency: { emoji: "📋", color: "#B8956A" },
 };
 
 export function BadgeCard({ definition, progress }: BadgeCardProps) {
@@ -112,7 +112,7 @@ export function BadgeCard({ definition, progress }: BadgeCardProps) {
           className="absolute inset-0 rounded-xl pointer-events-none overflow-hidden"
           style={{
             background:
-              "linear-gradient(90deg, transparent 0%, rgba(37, 99, 235, 0.06) 50%, transparent 100%)",
+              "linear-gradient(90deg, transparent 0%, rgba(184, 149, 106, 0.08) 50%, transparent 100%)",
             backgroundSize: "200% 100%",
             animation:
               Date.now() - new Date(progress.unlockedAt).getTime() < 10000

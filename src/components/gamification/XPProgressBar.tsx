@@ -73,7 +73,7 @@ export function XPProgressBar() {
             style={{
               width: `${animatedWidth}%`,
               background: isMaxLevel
-                ? "linear-gradient(90deg, var(--color-accent), #8B5CF6)"
+                ? "linear-gradient(90deg, var(--color-accent), #8B6E4B)"
                 : "var(--color-accent)",
               transition: "width 600ms cubic-bezier(0.22, 1, 0.36, 1)",
               transformOrigin: "left",

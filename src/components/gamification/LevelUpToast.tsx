@@ -43,7 +43,7 @@ export function LevelUpToast({ level, onDismiss }: LevelUpToastProps) {
         <div
           className="flex items-center justify-center w-10 h-10 rounded-xl text-sm font-bold"
           style={{
-            background: "linear-gradient(135deg, var(--color-accent), #1D4ED8)",
+            background: "linear-gradient(135deg, #C9A96E, #9F7D55)",
             color: "white",
             fontFamily: "Satoshi, var(--font-dm-sans), sans-serif",
           }}

@@ -15,7 +15,7 @@ export function Avatar({ type, size = "md" }: AvatarProps) {
     return (
       <div
         className={`${dimensions} rounded-full flex items-center justify-center shrink-0`}
-        style={{ background: "var(--color-accent)" }}
+        style={{ background: "linear-gradient(135deg, #C9A96E, #9F7D55)" }}
       >
         <svg
           width={size === "sm" ? 14 : 16}

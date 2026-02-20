@@ -1,30 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  --color-bg: #FAFAF9;
+  --color-bg: #FAFAF8;
   --color-surface: #FFFFFF;
-  --color-border: #E7E5E4;
-  --color-text-primary: #1C1917;
-  --color-text-secondary: #78716C;
-  --color-text-tertiary: #A8A29E;
-  --color-accent: #2563EB;
-  --color-accent-light: #EFF6FF;
-  --color-accent-hover: #1D4ED8;
-  --color-accent-subtle: #DBEAFE;
-  --color-streak: #EA580C;
-  --color-streak-light: #FFF7ED;
-  --color-success: #16A34A;
-  --color-success-light: #F0FDF4;
-  --color-locked: #D6D3D1;
-  --color-error: #DC2626;
-  --color-error-light: #FEF2F2;
+  --color-border: #E8E4DF;
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #6B6560;
+  --color-text-tertiary: #A9A49E;
+  --color-accent: #B8956A;
+  --color-accent-light: #FAF6F1;
+  --color-accent-hover: #9F7D55;
+  --color-accent-subtle: #F0E8DD;
+  --color-streak: #C17832;
+  --color-streak-light: #FBF5EE;
+  --color-success: #5A8A6A;
+  --color-success-light: #F2F7F4;
+  --color-locked: #D4CFC9;
+  --color-error: #C45B5B;
+  --color-error-light: #FBF2F2;
 }
 
 @theme inline {
   --color-background: var(--color-bg);
   --color-foreground: var(--color-text-primary);
   --font-sans: var(--font-dm-sans);
-  --font-display: var(--font-satoshi);
+  --font-display: var(--font-playfair);
 }
 
 body {
@@ -37,7 +37,7 @@ body {
 
 /* Scrollbar styling */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
