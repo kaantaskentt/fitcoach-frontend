@@ -4,6 +4,7 @@ import { useRef, useEffect, useState, useCallback } from "react";
 import type { ChatMessage } from "@/types";
 import { MessageBubble } from "./MessageBubble";
 import { TypingIndicator } from "./TypingIndicator";
+import { WelcomeHero } from "./WelcomeHero";
 
 interface MessageListProps {
   messages: ChatMessage[];
@@ -12,6 +13,7 @@ interface MessageListProps {
 }
 
 export function MessageList({ messages, isLoading, onRetry }: MessageListProps) {
+  const isEmptyState = messages.length <= 1 && messages[0]?.id === "welcome";
   const containerRef = useRef<HTMLDivElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -52,6 +54,7 @@ export function MessageList({ messages, isLoading, onRetry }: MessageListProps) 
         className="h-full overflow-y-auto px-4 py-6 sm:px-6"
       >
         <div className="max-w-2xl mx-auto space-y-4">
+          {isEmptyState && <WelcomeHero />}
           {messages.map((message) => (
             <MessageBubble
               key={message.id}

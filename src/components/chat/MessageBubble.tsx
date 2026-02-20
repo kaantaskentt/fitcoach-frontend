@@ -18,10 +18,11 @@ export function MessageBubble({ message, onRetry }: MessageBubbleProps) {
       <div className="flex items-start gap-3 justify-end animate-fade-in">
         <div className="max-w-[75%] sm:max-w-[65%]">
           <div
-            className="px-4 py-2.5 rounded-2xl rounded-tr-md text-sm leading-relaxed"
+            className="px-4 py-2.5 rounded-2xl rounded-tr-md text-sm leading-relaxed transition-all duration-200 hover:shadow-sm"
             style={{
               background: "var(--color-accent-light)",
               color: "var(--color-text-primary)",
+              border: "1px solid var(--color-accent-subtle)",
             }}
           >
             {message.content}
@@ -38,10 +39,11 @@ export function MessageBubble({ message, onRetry }: MessageBubbleProps) {
       <Avatar type="coach" />
       <div className="max-w-[75%] sm:max-w-[65%]">
         <div
-          className="px-4 py-2.5 rounded-2xl rounded-tl-md text-sm leading-relaxed"
+          className="px-4 py-2.5 rounded-2xl rounded-tl-md text-sm leading-relaxed transition-all duration-200 hover:shadow-sm"
           style={{
             background: isError ? "var(--color-error-light)" : "var(--color-surface)",
             borderLeft: isError ? "2px solid var(--color-error)" : "none",
+            border: isError ? undefined : "1px solid var(--color-border)",
           }}
         >
           {isError ? (

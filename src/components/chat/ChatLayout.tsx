@@ -66,7 +66,7 @@ export function ChatLayout() {
           <div className="flex items-center gap-3">
             {/* Logo mark */}
             <div
-              className="flex items-center justify-center w-8 h-8 rounded-lg"
+              className="flex items-center justify-center w-8 h-8 rounded-lg animate-gold-pulse"
               style={{ background: "linear-gradient(135deg, #C9A96E, #9F7D55)" }}
             >
               <svg
@@ -111,6 +111,14 @@ export function ChatLayout() {
             New chat
           </Button>
         </header>
+
+        {/* Gold accent line */}
+        <div
+          className="shrink-0 h-[2px]"
+          style={{
+            background: "linear-gradient(90deg, transparent 0%, #C9A96E 30%, #9F7D55 70%, transparent 100%)",
+          }}
+        />
 
         {/* Main content */}
         <div className="flex flex-1 min-h-0 overflow-hidden">

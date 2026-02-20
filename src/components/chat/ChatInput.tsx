@@ -53,21 +53,24 @@ export function ChatInput({ onSend, disabled = false }: ChatInputProps) {
       className="border-t px-4 py-3 sm:px-6 sm:py-4"
       style={{
         borderColor: "var(--color-border)",
-        background: "var(--color-surface)",
+        background: "linear-gradient(to top, var(--color-surface) 0%, var(--color-accent-light) 100%)",
       }}
     >
       <div
-        className="flex items-end gap-3 rounded-xl border px-4 py-3 transition-colors duration-150"
+        className="flex items-end gap-3 rounded-xl border px-4 py-3 transition-all duration-200"
         style={{
           borderColor: "var(--color-border)",
-          background: "var(--color-bg)",
+          background: "var(--color-surface)",
+          boxShadow: "0 1px 3px rgba(184, 149, 106, 0.06)",
         }}
         onFocus={(e) => {
           e.currentTarget.style.borderColor = "var(--color-accent)";
+          e.currentTarget.style.boxShadow = "0 0 0 3px rgba(184, 149, 106, 0.12), 0 2px 8px rgba(184, 149, 106, 0.08)";
         }}
         onBlur={(e) => {
           if (!e.currentTarget.contains(e.relatedTarget)) {
             e.currentTarget.style.borderColor = "var(--color-border)";
+            e.currentTarget.style.boxShadow = "0 1px 3px rgba(184, 149, 106, 0.06)";
           }
         }}
       >

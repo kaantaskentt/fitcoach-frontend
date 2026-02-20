@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { XPProgressBar } from "./XPProgressBar";
 import { StreakCounter } from "./StreakCounter";
 import { BadgeGrid } from "./BadgeGrid";
@@ -26,6 +27,32 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
 
   const content = (
     <div className="space-y-6 p-5">
+      {/* Sidebar accent image */}
+      <div className="relative rounded-xl overflow-hidden" style={{ height: "100px" }}>
+        <Image
+          src="/images/04_sidebar_accent.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          quality={75}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.5) 100%)",
+          }}
+        />
+        <div className="relative z-10 flex items-center justify-center h-full">
+          <p
+            className="text-[11px] font-semibold uppercase tracking-[0.2em]"
+            style={{ color: "rgba(201, 169, 110, 0.9)" }}
+          >
+            Elevate Your Fitness
+          </p>
+        </div>
+      </div>
+
       {/* Section: Progress */}
       <div>
         <h2
