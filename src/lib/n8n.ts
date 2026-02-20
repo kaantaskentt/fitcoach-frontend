@@ -1,23 +1,16 @@
 import type { N8nResponse } from "@/types";
 
-const WEBHOOK_URL = process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL;
+const WEBHOOK_URL = "https://kaantaskent.app.n8n.cloud/webhook/fitness-coach";
 
 export async function sendMessage(
   message: string,
   sessionId: string
 ): Promise<N8nResponse> {
-  if (!WEBHOOK_URL) {
-    return {
-      success: false,
-      error: "Webhook URL is not configured.",
-    };
-  }
-
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 30000);
 
   try {
-    const res = await fetch(`${WEBHOOK_URL}/fitness-coach`, {
+    const res = await fetch(WEBHOOK_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message, sessionId }),
