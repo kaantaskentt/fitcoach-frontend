@@ -11,12 +11,15 @@ export default function Home() {
   const [appVisible, setAppVisible] = useState(false);
 
   useEffect(() => {
-    const seen = localStorage.getItem(WELCOME_SEEN_KEY);
-    if (seen) {
-      setAppVisible(true);
-    } else {
-      setShowWelcome(true);
-    }
+    const frame = requestAnimationFrame(() => {
+      const seen = localStorage.getItem(WELCOME_SEEN_KEY);
+      if (seen) {
+        setAppVisible(true);
+      } else {
+        setShowWelcome(true);
+      }
+    });
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   const handleEnter = () => {

@@ -7,8 +7,11 @@ export function useSessionId() {
   const [sessionId, setSessionId] = useState<string>("");
 
   useEffect(() => {
-    const profile = storage.getProfile();
-    setSessionId(profile.sessionId);
+    const frame = requestAnimationFrame(() => {
+      const profile = storage.getProfile();
+      setSessionId(profile.sessionId);
+    });
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   const resetSession = () => {
