@@ -10,10 +10,11 @@ export function CoachTeaser() {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
-      setSubmitted(true);
-    }
+    const frame = requestAnimationFrame(() => {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) setSubmitted(true);
+    });
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   const handleSubmit = () => {

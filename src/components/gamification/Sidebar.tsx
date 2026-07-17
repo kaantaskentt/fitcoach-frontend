@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import { XPProgressBar } from "./XPProgressBar";
 import { StreakCounter } from "./StreakCounter";
@@ -13,18 +12,6 @@ interface SidebarProps {
 }
 
 export function Sidebar({ isOpen, onClose }: SidebarProps) {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    if (isOpen) {
-      setIsMounted(true);
-    }
-  }, [isOpen]);
-
-  const handleTransitionEnd = () => {
-    if (!isOpen) setIsMounted(false);
-  };
-
   const content = (
     <div className="space-y-6 p-5">
       {/* Sidebar accent image */}
@@ -99,11 +86,8 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
       </aside>
 
       {/* Mobile bottom sheet */}
-      {isMounted && (
-        <div
-          className="md:hidden fixed inset-0 z-50"
-          onTransitionEnd={handleTransitionEnd}
-        >
+      {isOpen && (
+        <div className="md:hidden fixed inset-0 z-50">
           {/* Backdrop */}
           <div
             className="absolute inset-0 backdrop-blur-light transition-opacity duration-300"

@@ -46,7 +46,8 @@ export function useGamification(): GamificationState & GamificationActions {
   });
 
   useEffect(() => {
-    setState(buildState(true));
+    const frame = requestAnimationFrame(() => setState(buildState(true)));
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   const recordMessage = useCallback((userMessage: string): MessageResult => {

@@ -114,10 +114,7 @@ export function BadgeCard({ definition, progress }: BadgeCardProps) {
             background:
               "linear-gradient(90deg, transparent 0%, rgba(184, 149, 106, 0.08) 50%, transparent 100%)",
             backgroundSize: "200% 100%",
-            animation:
-              Date.now() - new Date(progress.unlockedAt).getTime() < 10000
-                ? "shimmer 2s ease-in-out 1"
-                : "none",
+            animation: "shimmer 2s ease-in-out 1",
           }}
         />
       )}

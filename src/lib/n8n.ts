@@ -1,11 +1,18 @@
 import type { N8nResponse } from "@/types";
 
-const WEBHOOK_URL = "https://kaantaskent.app.n8n.cloud/webhook/fitness-coach";
+const WEBHOOK_URL = process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL;
 
 export async function sendMessage(
   message: string,
   sessionId: string
 ): Promise<N8nResponse> {
+  if (!WEBHOOK_URL) {
+    return {
+      success: false,
+      error: "The coaching workflow is not configured.",
+    };
+  }
+
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 30000);
 

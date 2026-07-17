@@ -28,14 +28,17 @@ export function useChat(sessionId: string) {
 
   // Load messages from storage on mount
   useEffect(() => {
-    const stored = storage.getMessages();
-    if (stored.length > 0) {
-      setMessages(stored);
-    } else {
-      const userName = storage.getName();
-      setMessages([createWelcomeMessage(userName)]);
-    }
-    setIsReady(true);
+    const frame = requestAnimationFrame(() => {
+      const stored = storage.getMessages();
+      if (stored.length > 0) {
+        setMessages(stored);
+      } else {
+        const userName = storage.getName();
+        setMessages([createWelcomeMessage(userName)]);
+      }
+      setIsReady(true);
+    });
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   // Persist messages whenever they change (after initial load)
