@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "film:score": "python3 scripts/film/soundtrack.py public/motion/fitcoach-film.wav",
+    "film:render": "node scripts/film/render.mjs"
   },
   "dependencies": {
     "next": "^16.2.10",
